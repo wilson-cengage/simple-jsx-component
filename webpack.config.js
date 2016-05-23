@@ -9,13 +9,16 @@ module.exports = {
   context: path.join(__dirname, './client'),
   entry: {
     index: './index.js',
-    exports: './exports.js',
-    vendor: ['react','react-dom']
+    exports: './exports.js'
   },
   output: {
     path: path.join(__dirname, './static'),
     filename: '[name].bundle.js',
     libraryTarget: 'umd'
+  },
+  externals: {
+    'react': 'React',
+    'react-dom': 'ReactDOM'
   },
   module: {
     loaders: [
@@ -51,11 +54,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: Infinity,
-      filename: 'vendor.bundle.js'
-    }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       debug: false
