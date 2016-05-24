@@ -1,9 +1,9 @@
 {
-  "name": "simple-jsx-component",
+  "name": "component1",
   "version": "0.0.1",
   "private": true,
   "description": "Component Sample - React, Webpack 2",
-  "main": "static/exports.bundle.js",
+  "main": "dist/component1.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "./node_modules/.bin/webpack-dev-server --history-api-fallback --progress --port 3000",
